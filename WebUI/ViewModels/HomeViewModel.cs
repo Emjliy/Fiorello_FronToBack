@@ -8,8 +8,7 @@ namespace WebUI.ViewModels
 {
     public class HomeViewModel
     {
-       public List<Slider> Slides { get; set; }
-
+        public List<Slider> Slides { get; set; }
         public Summary Summary { get; set; }
         public List<Category> Categories { get; set; }
         public List<Product> Products { get; set; }
