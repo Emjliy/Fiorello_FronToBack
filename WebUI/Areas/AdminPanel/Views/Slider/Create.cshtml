@@ -1,4 +1,5 @@
-﻿@model Slider
+﻿@using WebUI.ViewModels.Sliders
+@model SliderCreateVM
 
 @{
     ViewData["Title"] = "Create";
@@ -14,9 +15,9 @@
                 <form class="forms-sample" method="post">
                     <div class="form-group">
                         @*asp-for nameye uygun id yaradr, name attributu yaradr,labelle connectiounu yaradr,create basanda CategoryCreateVM obyekt sheklinde gonderir*@
-                        <label asp-for="URL">Select Photo</label>
-                        <input asp-for="URL" class="form-control" >
-                        <span class="text-danger" asp-validation-for="URL"></span>
+                        <label asp-for="Photo">Select Photo</label>
+                        <input asp-for="Photo" class="form-control">
+                        <span class="text-danger" asp-validation-for="Photo"></span>
 
                     </div>
                     <button type="submit" class="btn btn-primary mr-2">Create</button>
