@@ -54,5 +54,66 @@ namespace WebUI.Areas.AdminPanel.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+           public IActionResult Update(int? id)
+        {
+            if (id == null)
+            {
+                return BadRequest();
+            }
+            Category category = _context.Categories.Where(c => !c.isDeleted).FirstOrDefault(c => c.ID == id);
+            if (category == null)
+            {
+                return NotFound();
+            }
+            return View(category);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Update(int? id,Category category)
+        {
+            if (id == null)
+            {
+                return BadRequest();
+            }
+            Category categoryDb = _context.Categories.Where(c => !c.isDeleted).FirstOrDefault(c => c.ID == id);
+            if (category == null)
+            {
+                return NotFound();
+            }
+            //eyni addisa databaseye sorgu getmir 
+            if (category.Name.ToLower()==categoryDb.Name.ToLower())
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            //deishdiyimiz adda olub olmadigini yoxlayir
+            bool isExist = categories.Where(c =>!c.isDeleted).Any(c => c.Name.ToLower() == category.Name.ToLower());
+            if (isExist)
+            {
+                ModelState.AddModelError("NAME", $"{category.Name} is exist.");
+                return View();
+            }
+            categoryDb.Name = category.Name;
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+
+        }
+        public async Task<IActionResult> Delete(int? id, Category category)
+        {
+            if (id == null)
+            {
+                return BadRequest();
+            }
+            Category categoryDb = _context.Categories.Where(c => !c.isDeleted).FirstOrDefault(c => c.ID == id);
+            if (category == null)
+            {
+                return NotFound();
+            }
+            //_context.Categories.Remove(categoryDb);
+            categoryDb.isDeleted = true;
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+
+        }
+
     }
 }

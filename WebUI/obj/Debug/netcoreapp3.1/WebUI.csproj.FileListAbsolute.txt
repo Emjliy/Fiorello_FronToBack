@@ -158,3 +158,4 @@ C:\Users\Emilia\source\repos\WebUI\WebUI\obj\Debug\netcoreapp3.1\Razor\Areas\Adm
 C:\Users\Emilia\source\repos\WebUI\WebUI\obj\Debug\netcoreapp3.1\Razor\Areas\AdminPanel\Views\_ViewStart.cshtml.g.cs
 C:\Users\Emilia\source\repos\WebUI\WebUI\obj\Debug\netcoreapp3.1\Razor\Areas\AdminPanel\Views\Category\Index.cshtml.g.cs
 C:\Users\Emilia\source\repos\WebUI\WebUI\obj\Debug\netcoreapp3.1\Razor\Areas\AdminPanel\Views\Category\Create.cshtml.g.cs
+C:\Users\Emilia\source\repos\WebUI\WebUI\obj\Debug\netcoreapp3.1\Razor\Areas\AdminPanel\Views\Category\Update.cshtml.g.cs
