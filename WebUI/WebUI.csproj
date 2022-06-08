@@ -69,8 +69,8 @@
     <None Include="wwwroot\admin\vendors\mdi\css\materialdesignicons.min.css.map" />
     <None Include="wwwroot\admin\vendors\mdi\fonts\materialdesignicons-webfont.svg" />
     <None Include="wwwroot\admin\vendors\mdi\fonts\materialdesignicons-webfont.woff2" />
-    <None Include="wwwroot\front\css\style.css.map" />
-    <None Include="wwwroot\front\js\script.js" />
+    <None Include="wwwroot\css\style.css.map" />
+    <None Include="wwwroot\js\script.js" />
   </ItemGroup>
 
 </Project>
