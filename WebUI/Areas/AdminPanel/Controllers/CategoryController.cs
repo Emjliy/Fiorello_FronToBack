@@ -68,6 +68,7 @@ namespace WebUI.Areas.AdminPanel.Controllers
             return View(category);
         }
         [HttpPost]
+
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Update(int? id,Category category)
         {
