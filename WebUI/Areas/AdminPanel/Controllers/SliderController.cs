@@ -25,32 +25,20 @@ namespace WebUI.Areas.AdminPanel.Controllers
         {
             return View();
         }
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> Create(Slider slide)
-        //{
-        //if (!ModelState.IsValid) return View();
-        //bool isExist = false;
-        //foreach (var ct in categories)
-        //{
-        //    if (category.Name.ToLower() == ct.Name.ToLower())
-        //    {
-        //        isExist = true; break;
-        //    }
-        //}
-        //if (isExist)
-        //{
-        //    ModelState.AddModelError("NAME", $"{category.Name} is exist.");
-        //    return View();
-        //}
-        //Category newCategory = new Category
-        //{
-        //    Name = category.Name
-        //};
-        //await _context.Categories.AddAsync(newCategory);
-        //await _context.SaveChangesAsync();
-        //return RedirectToAction(nameof(Index));
-        //}
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(Slider slide)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+            return Content("Ok");
+            
+            //await _context.Categories.AddAsync(newCategory);
+            //await _context.SaveChangesAsync();
+            //return RedirectToAction(nameof(Index));
+        }
 
     }
 }
