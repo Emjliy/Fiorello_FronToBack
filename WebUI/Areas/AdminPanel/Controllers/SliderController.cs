@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using WebUI.DAL;
@@ -44,12 +45,47 @@ namespace WebUI.Areas.AdminPanel.Controllers
                 ModelState.AddModelError("Photo", "type file must be image");
                 return View();
             }
-            return Json(slide.Photo.FileName);
+            using (
+                FileStream filestream = new FileStream(@"C: \Users\Emilia\Desktop\Fiorella\img\" + slide.Photo.FileName, FileMode.Create))
+            {
+                slide.Photo.CopyTo(filestream);
+            }
+                return Json(slide.Photo.FileName);
 
-            //await _context.Categories.AddAsync(newCategory);
-            //await _context.SaveChangesAsync();
-            //return RedirectToAction(nameof(Index));
         }
+        //[HttpPost]
+
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> Upload(int? id, Slider slide)
+        //{
+        //    if (id == null)
+        //    {
+        //        return BadRequest();
+        //    }
+        //    Slider slideDb = _context.Slides.FirstOrDefault(s => s.ID == id);
+        //    if (slide == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    if (slide.Photo.FileName == slideDb.Photo.FileName)
+        //    {
+        //        return RedirectToAction(nameof(Index));
+        //    }
+        //    else
+        //    {
+
+        //    }
+        //    bool isExist = Slider.Any(s => s.pho.ToLower() == slide.Photo.FileName.ToLower());
+        //    if (isExist)
+        //    {
+        //        ModelState.AddModelError("Photo", $"{slide.Photo.FileName} is exist.");
+        //        return View();
+        //    }
+        //    slideDb.Photo.FileName = slide.Photo.FileName;
+        //    await _context.SaveChangesAsync();
+        //    return RedirectToAction(nameof(Index));
+
+        //}
 
     }
 }
