@@ -33,8 +33,19 @@ namespace WebUI.Areas.AdminPanel.Controllers
             {
                 return View();
             }
-            return Content("Ok");
-            
+            if (slide.Photo.Length / 1024 > 200)
+            {
+                ModelState.AddModelError("Photo", "max size must be  less than 200kb");
+                return View();
+            }
+
+            if (!(slide.Photo.ContentType.Contains("image/")))
+            {
+                ModelState.AddModelError("Photo", "type file must be image");
+                return View();
+            }
+            return Json(slide.Photo.FileName);
+
             //await _context.Categories.AddAsync(newCategory);
             //await _context.SaveChangesAsync();
             //return RedirectToAction(nameof(Index));
