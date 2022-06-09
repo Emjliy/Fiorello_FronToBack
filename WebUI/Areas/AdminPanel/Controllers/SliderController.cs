@@ -55,10 +55,26 @@ namespace WebUI.Areas.AdminPanel.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+      
+        public IActionResult Update(int? id)
+        {
+            if (id == null)
+            {
+                return BadRequest();
+            }
+            Slider slide = _context.Slides.FirstOrDefault(s => s.ID == id);
+            if (slide == null)
+            {
+                return NotFound();
+            }
+            return View(slide);
+           
+
+        }
         [HttpPost]
 
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Update(int? id,Slider slide)
+        public async  Task<IActionResult> Update(int? id,Slider slide)
         {
             if (id == null)
             {
@@ -70,15 +86,11 @@ namespace WebUI.Areas.AdminPanel.Controllers
                 return NotFound();
             }
             //eyni addisa databaseye sorgu getmir,eyni pathdadrsa
-            if (slide.Photo.FileName==slideDb.URL)
+            if (slide.Photo.FileName == slideDb.URL)
             {
                 return RedirectToAction(nameof(Index));
-
             }
-            //if (Helper.GetPath(_env.WebRootPath, "img", slide.URL) == slideDb.URL)
-            //{
-            //}
-            bool isExist =_context.Slides.Any(s => s.URL == slide.Photo.FileName);
+            bool isExist = _context.Slides.Any(s => s.URL == slide.Photo.FileName);
             if (isExist)
             {
                 ModelState.AddModelError("Photo", $"{slide.Photo.FileName} is exist.");
@@ -87,9 +99,9 @@ namespace WebUI.Areas.AdminPanel.Controllers
             slideDb.URL = slide.Photo.FileName;
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
-
-            
-
+            //if (Helper.GetPath(_env.WebRootPath, "img", slide.URL) == slideDb.URL)
+            //{
+            //}
         }
         public async Task<IActionResult> Delete(int? id)
         {
