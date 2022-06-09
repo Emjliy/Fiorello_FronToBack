@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using WebUI.DAL;
+using WebUI.Helpers;
 using WebUI.Models;
 
 namespace WebUI.Areas.AdminPanel.Controllers
@@ -37,12 +38,12 @@ namespace WebUI.Areas.AdminPanel.Controllers
             {
                 return View();
             }
-            if (slide.Photo.Length / 1024 > 200)
+            if (!slide.Photo.CheckFileSize(200))
             {
                 ModelState.AddModelError("Photo", "max size must be  less than 200kb");
                 return View();
             }
-            if (!(slide.Photo.ContentType.Contains("image/")))
+            if (!slide.Photo.CheckFileType("image/"))
             {
                 ModelState.AddModelError("Photo", "type file must be image");
                 return View();
