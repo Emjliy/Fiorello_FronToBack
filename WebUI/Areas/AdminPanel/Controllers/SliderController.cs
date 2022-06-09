@@ -55,5 +55,58 @@ namespace WebUI.Areas.AdminPanel.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+        [HttpPost]
+
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Update(int? id,Slider slide)
+        {
+            if (id == null)
+            {
+                return BadRequest();
+            }
+            Slider slideDb = _context.Slides.FirstOrDefault(s => s.ID == id);
+            if (slide == null)
+            {
+                return NotFound();
+            }
+            //eyni addisa databaseye sorgu getmir,eyni pathdadrsa
+            if (Helper.GetPath(_env.WebRootPath, "img", slide.URL) == slideDb.URL)
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            //bool isExist = slide.Any(s => s.Helper.GetPath(_env.WebRootPath, "img", slide.URL) == slideDb.URL);
+
+            //Category categoryDb = _context.Categories.Where(c => !c.isDeleted).FirstOrDefault(c => c.ID == id);
+            //var path = Helper.GetPath(_env.WebRootPath, "img", slide.URL);
+            //if (System.IO.File.Exists(path))
+            //{
+            //    System.IO.File.Delete(path);
+            //}
+            //categoryDb.Name = category.Name;
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+
+        }
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return BadRequest();
+            }
+            var slide = _context.Slides.Find(id);
+            if (slide == null)
+            {
+                return NotFound();
+            }
+            var path=Helper.GetPath(_env.WebRootPath, "img", slide.URL);
+            if (System.IO.File.Exists(path))
+            {
+                System.IO.File.Delete(path);
+            }
+            _context.Slides.Remove(slide);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+
+        }       
     }
 }
