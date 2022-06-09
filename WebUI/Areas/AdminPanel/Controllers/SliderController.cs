@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -14,9 +15,11 @@ namespace WebUI.Areas.AdminPanel.Controllers
     {
 
         private AppDbContext _context { get; }
-        public SliderController(AppDbContext context)
+        private IWebHostEnvironment _env  { get; }
+        public SliderController(AppDbContext context, IWebHostEnvironment env)
         {
             _context = context;
+            _env = env;
         }
         public IActionResult Index()
         {
@@ -28,7 +31,7 @@ namespace WebUI.Areas.AdminPanel.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(Slider slide)
+        public async Task<IActionResult> Create(Slider slide)
         {
             if (!ModelState.IsValid)
             {
@@ -45,13 +48,16 @@ namespace WebUI.Areas.AdminPanel.Controllers
                 return View();
             }
             var fileName = Guid.NewGuid().ToString() + slide.Photo.FileName;
-
+            var resultPath = Path.Combine(_env.WebRootPath, "img", fileName);
             using (
-                FileStream filestream = new FileStream(@"C:\Users\Emilia\Desktop\Fiorella\img\" + fileName, FileMode.Create))
+                FileStream filestream = new FileStream(resultPath, FileMode.Create))
             {
-                slide.Photo.CopyTo(filestream);
+                await slide.Photo.CopyToAsync(filestream);
             }
-            return Json(fileName);
+            slide.URL = fileName;
+            await _context.Slides.AddAsync(slide);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
     }
 }
