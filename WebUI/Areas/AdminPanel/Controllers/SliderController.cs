@@ -70,21 +70,25 @@ namespace WebUI.Areas.AdminPanel.Controllers
                 return NotFound();
             }
             //eyni addisa databaseye sorgu getmir,eyni pathdadrsa
-            if (Helper.GetPath(_env.WebRootPath, "img", slide.URL) == slideDb.URL)
+            if (slide.Photo.FileName==slideDb.URL)
             {
                 return RedirectToAction(nameof(Index));
-            }
-            //bool isExist = slide.Any(s => s.Helper.GetPath(_env.WebRootPath, "img", slide.URL) == slideDb.URL);
 
-            //Category categoryDb = _context.Categories.Where(c => !c.isDeleted).FirstOrDefault(c => c.ID == id);
-            //var path = Helper.GetPath(_env.WebRootPath, "img", slide.URL);
-            //if (System.IO.File.Exists(path))
+            }
+            //if (Helper.GetPath(_env.WebRootPath, "img", slide.URL) == slideDb.URL)
             //{
-            //    System.IO.File.Delete(path);
             //}
-            //categoryDb.Name = category.Name;
+            bool isExist =_context.Slides.Any(s => s.URL == slide.Photo.FileName);
+            if (isExist)
+            {
+                ModelState.AddModelError("Photo", $"{slide.Photo.FileName} is exist.");
+                return View();
+            }
+            slideDb.URL = slide.Photo.FileName;
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
+
+            
 
         }
         public async Task<IActionResult> Delete(int? id)
