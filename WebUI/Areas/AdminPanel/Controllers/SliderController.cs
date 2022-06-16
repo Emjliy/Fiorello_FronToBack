@@ -53,7 +53,7 @@ namespace WebUI.Areas.AdminPanel.Controllers
             slide.URL = await slide.Photo.SaveFileAsync(_env.WebRootPath,"img");
             await _context.Slides.AddAsync(slide);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            //return RedirectToAction(nameof(Index));
         }
       
         public IActionResult Update(int? id)

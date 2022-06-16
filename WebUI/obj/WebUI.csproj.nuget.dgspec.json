@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Emilia\\source\\repos\\WebUI\\WebUI\\WebUI.csproj": {}
+    "C:\\Users\\Emilia\\Source\\Repos\\Fiorello_FronToBack\\Fiorello_FronToBack\\WebUI\\WebUI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Emilia\\source\\repos\\WebUI\\WebUI\\WebUI.csproj": {
+    "C:\\Users\\Emilia\\Source\\Repos\\Fiorello_FronToBack\\Fiorello_FronToBack\\WebUI\\WebUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Emilia\\source\\repos\\WebUI\\WebUI\\WebUI.csproj",
+        "projectUniqueName": "C:\\Users\\Emilia\\Source\\Repos\\Fiorello_FronToBack\\Fiorello_FronToBack\\WebUI\\WebUI.csproj",
         "projectName": "WebUI",
-        "projectPath": "C:\\Users\\Emilia\\source\\repos\\WebUI\\WebUI\\WebUI.csproj",
+        "projectPath": "C:\\Users\\Emilia\\Source\\Repos\\Fiorello_FronToBack\\Fiorello_FronToBack\\WebUI\\WebUI.csproj",
         "packagesPath": "C:\\Users\\Emilia\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Emilia\\source\\repos\\WebUI\\WebUI\\obj\\",
+        "outputPath": "C:\\Users\\Emilia\\Source\\Repos\\Fiorello_FronToBack\\Fiorello_FronToBack\\WebUI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Emilia\\AppData\\Roaming\\NuGet\\NuGet.Config",

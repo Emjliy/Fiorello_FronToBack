@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ra5qOF1nEdQsQS+Qepu5ozsv69x1YbztID+6qiG784caP6QFkggRAinKcYBb0Wr41z1oWpLdPa+sLjcDfxS/Nw==",
+  "dgSpecHash": "GXjN+XsQ/GOI0wMvw0a5BTMEFnCi3MMmTFDTyWqFUFnm/H6sF2u8KJuw6XL4OK0vmWGdjmX+Sg3cisIuJ/P0vA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Emilia\\source\\repos\\WebUI\\WebUI\\WebUI.csproj",
+  "projectFilePath": "C:\\Users\\Emilia\\Source\\Repos\\Fiorello_FronToBack\\Fiorello_FronToBack\\WebUI\\WebUI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Emilia\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Emilia\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
