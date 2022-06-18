@@ -11,6 +11,8 @@
     <Compile Remove="Migrations\20220605064656_VideoSummaryList.Designer.cs" />
     <Compile Remove="Migrations\20220605070003_CreateVideoSumList.cs" />
     <Compile Remove="Migrations\20220605070003_CreateVideoSumList.Designer.cs" />
+    <Compile Remove="Migrations\20220616192307_CreateSettingsTable.cs" />
+    <Compile Remove="Migrations\20220616192307_CreateSettingsTable.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

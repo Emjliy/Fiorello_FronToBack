@@ -55,12 +55,6 @@
                                     <li><a href="" data-id="@ct.Name.ToLower()">@ct.Name</a></li>
 
                                 }
-                                <li><a href="" data-id="all">All</a></li>
-                                @foreach (var ct in Model.Categories)
-                                {
-                                    <li><a href="" data-id="@ct.Name.ToLower()">@ct.Name</a></li>
-
-                                }
                             </ul>
                         </li>
                     </ul>
@@ -69,7 +63,6 @@
                         @foreach (var ct in Model.Categories)
                         {
                             <li><a href="" data-id="@ct.Name.ToLower()">@ct.Name</a></li>
-
                         }
                     </ul>
                     <ul class="list-unstyled">

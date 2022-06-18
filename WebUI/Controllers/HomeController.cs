@@ -26,7 +26,7 @@ namespace WebUI.Controllers
                 Slides = _context.Slides.ToList(),
                 Summary = _context.Summary.FirstOrDefault(),
                 Categories = _context.Categories.ToList(),
-                Products = _context.Products.Include(c => c.Category).Include(p => p.Images).ToList(),
+                Products = _context.Products.Include(c => c.Category).Include(p => p.Images).Take(8).ToList(),
                 Video = _context.Video.FirstOrDefault(),
                 VideoSummary = _context.VideoSummary.FirstOrDefault(),
                 VideoSummaryList = _context.VideoSummaryList.ToList(),
