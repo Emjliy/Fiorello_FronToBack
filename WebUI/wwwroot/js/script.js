@@ -1,5 +1,23 @@
 $(document).ready(function () {
 
+    //PRODUCT LOADMORE
+    $(document).on('click', '#loadProduct', function () {
+        let length = $("#product-list").children.length;
+        console.log(length);
+
+        $.ajax( {
+            url: `https://localhost:44315/product/loadmore?skip=${length}`,
+            method: "GET",
+            success: function (res) {
+                console.log(res)
+                if (res =="") {
+                    $("#loadProduct").css("display", "none");
+                }
+                $("#product-list").append(res);
+            }
+        })
+    })
+
     // HEADER
 
     $(document).on('click', '#search', function () {
