@@ -326,3 +326,8 @@ C:\Users\Emilia\Source\Repos\Fiorello_FronToBack\Fiorello_FronToBack\WebUI\obj\D
 C:\Users\Emilia\Source\Repos\Fiorello_FronToBack\Fiorello_FronToBack\WebUI\obj\Debug\netcoreapp3.1\WebUI.dll
 C:\Users\Emilia\Source\Repos\Fiorello_FronToBack\Fiorello_FronToBack\WebUI\obj\Debug\netcoreapp3.1\WebUI.pdb
 C:\Users\Emilia\Source\Repos\Fiorello_FronToBack\Fiorello_FronToBack\WebUI\obj\Debug\netcoreapp3.1\WebUI.genruntimeconfig.cache
+C:\Users\Emilia\Source\Repos\Fiorello_FronToBack\Fiorello_FronToBack\WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Product\Index.cshtml.g.cs
+C:\Users\Emilia\Source\Repos\Fiorello_FronToBack\Fiorello_FronToBack\WebUI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Emilia\Source\Repos\Fiorello_FronToBack\Fiorello_FronToBack\WebUI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\Emilia\Source\Repos\Fiorello_FronToBack\Fiorello_FronToBack\WebUI\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\Emilia\Source\Repos\Fiorello_FronToBack\Fiorello_FronToBack\WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ProductPartial.cshtml.g.cs

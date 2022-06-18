@@ -21,9 +21,5 @@ namespace WebUI.ViewModels
         public List<BlogCard> BlogCards { get; set; }
         public List<FloristsSlider> FloristsSlides { get; set; }
 
-
-
-
-
     }
 }

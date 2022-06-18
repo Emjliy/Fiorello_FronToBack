@@ -17,7 +17,7 @@ namespace WebUI.Areas.AdminPanel.Controllers
         public CategoryController(AppDbContext context)
         {
             _context = context;
-            categories = _context.Categories.Where(ct => !ct.isDeleted);
+            categories = _context.Categories.Where(ct =>!ct.isDeleted);
         }
         public IActionResult Index()
         {
@@ -60,43 +60,36 @@ namespace WebUI.Areas.AdminPanel.Controllers
             {
                 return BadRequest();
             }
-            Category category = _context.Categories.Where(c => !c.isDeleted).FirstOrDefault(c => c.ID == id);
-            if (category == null)
-            {
+            Category dbCategory = _context.Categories.Where(c => !c.isDeleted).FirstOrDefault(c => c.ID == id);
+            if (dbCategory == null)
+            {   
                 return NotFound();
             }
-            return View(category);
+            return View(dbCategory);
         }
         [HttpPost]
-
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Update(int? id,Category category)
         {
-            if (id == null)
-            {
-                return BadRequest();
+            if (!ModelState.IsValid) { 
+                return View();
             }
-            Category categoryDb = _context.Categories.Where(c => !c.isDeleted).FirstOrDefault(c => c.ID == id);
-            if (category == null)
-            {
-                return NotFound();
-            }
+            Category dbCategory = _context.Categories.Where(c => !c.isDeleted).FirstOrDefault(c => c.ID == id);
             //eyni addisa databaseye sorgu getmir 
-            if (category.Name.ToLower()==categoryDb.Name.ToLower())
+            if (category.Name.ToLower()== dbCategory.Name.ToLower())
             {
                 return RedirectToAction(nameof(Index));
             }
-            //deishdiyimiz adda olub olmadigini yoxlayir
+            //deishdiyimiz adda dbde olub olmadigini yoxlayir
             bool isExist = categories.Where(c =>!c.isDeleted).Any(c => c.Name.ToLower() == category.Name.ToLower());
             if (isExist)
             {
                 ModelState.AddModelError("NAME", $"{category.Name} is exist.");
                 return View();
             }
-            categoryDb.Name = category.Name;
+            dbCategory.Name = category.Name;
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
-
         }
         public async Task<IActionResult> Delete(int? id, Category category)
         {
@@ -104,13 +97,13 @@ namespace WebUI.Areas.AdminPanel.Controllers
             {
                 return BadRequest();
             }
-            Category categoryDb = _context.Categories.Where(c => !c.isDeleted).FirstOrDefault(c => c.ID == id);
-            if (category == null)
+            Category dbCategory = _context.Categories.Where(c =>!c.isDeleted).FirstOrDefault(c => c.ID == id);
+            if (dbCategory == null)
             {
                 return NotFound();
             }
-            //_context.Categories.Remove(categoryDb);
-            categoryDb.isDeleted = true;
+            _context.Categories.Remove(dbCategory);
+            dbCategory.isDeleted = true;
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
 
