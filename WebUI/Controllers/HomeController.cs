@@ -35,6 +35,7 @@ namespace WebUI.Controllers
                 Blog = _context.Blog.FirstOrDefault(),
                 BlogCards = _context.BlogCards.ToList(),
                 FloristsSlides = _context.FloristsSlides.ToList(),
+                Settings = _context.Settings.ToList(),
             }; 
             return View(home);
         }

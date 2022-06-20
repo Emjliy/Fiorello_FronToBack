@@ -10,7 +10,7 @@ $(document).ready(function () {
             method: "GET",
             success: function (res) {
                 console.log(res)
-                if (res =="") {
+                if (res == "") {
                     $("#loadProduct").css("display", "none");
                 }
                 $("#product-list").append(res);

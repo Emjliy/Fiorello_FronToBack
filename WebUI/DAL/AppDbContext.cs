@@ -25,6 +25,7 @@ namespace WebUI.DAL
         public DbSet<Blog> Blog { get; set; }
         public DbSet<BlogCard> BlogCards { get; set; }
         public DbSet<FloristsSlider> FloristsSlides { get; set; }
+        public DbSet<Settings> Settings { get; set; }
 
 
 
