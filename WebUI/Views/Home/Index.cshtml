@@ -53,7 +53,6 @@
                                 @foreach (var ct in Model.Categories)
                                 {
                                     <li><a href="" data-id="@ct.Name.ToLower()">@ct.Name</a></li>
-
                                 }
                             </ul>
                         </li>
@@ -74,9 +73,10 @@
                 </div>
             </div>
             @*PRODUCTS WITH PARTIALVIEW*@
-            <div id="product-list" class="row">
-                <partial name="_ProductPartial" model="@Model.Products"/>
-            </div>
+        <div id="product-list" class="row">
+            @await Component.InvokeAsync("Products");
+            @*<partial name="_ProductPartial" model="@Model.Products"/>*@
+        </div>
             <div class="row justify-content-center">
                 <button id="loadProduct" class="btn btn-success">Load more...</button>
             </div>

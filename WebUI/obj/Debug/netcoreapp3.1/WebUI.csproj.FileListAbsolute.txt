@@ -333,3 +333,4 @@ C:\Users\Emilia\Source\Repos\Fiorello_FronToBack\Fiorello_FronToBack\WebUI\obj\D
 C:\Users\Emilia\Source\Repos\Fiorello_FronToBack\Fiorello_FronToBack\WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Header\Default.cshtml.g.cs
 C:\Users\Emilia\Source\Repos\Fiorello_FronToBack\Fiorello_FronToBack\WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Footer\Default.cshtml.g.cs
 C:\Users\Emilia\Source\Repos\Fiorello_FronToBack\Fiorello_FronToBack\WebUI\obj\Debug\netcoreapp3.1\WebUI.csproj.AssemblyReference.cache
+C:\Users\Emilia\Source\Repos\Fiorello_FronToBack\Fiorello_FronToBack\WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Products\Default.cshtml.g.cs
