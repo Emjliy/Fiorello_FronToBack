@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\WebUI",
+    "\\WebUI\\Controllers"
   ],
+  "SelectedNode": "\\WebUI\\Controllers\\HomeController.cs",
   "PreviewInSolutionExplorer": false
 }

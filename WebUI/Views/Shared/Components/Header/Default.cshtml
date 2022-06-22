@@ -1,4 +1,4 @@
-﻿@model Dictionary<string,string>
+﻿@model Dictionary<string, string>
 <header>
     <div class="container">
         <div class="row">
@@ -144,6 +144,21 @@
                                     <li class="">No products in the cart.</li>
                                 </ul>
                             </li>
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <li class="nav-item">
+                                    @User.Identity.Name
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-controller="Account" asp-action="Logout">Logout</a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-controller="Account" asp-action="Login">Sign In</a>
+                                </li>
+                            }
                         </ul>
                     </div>
 

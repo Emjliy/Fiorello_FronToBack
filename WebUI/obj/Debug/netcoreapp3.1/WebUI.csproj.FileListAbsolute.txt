@@ -334,3 +334,12 @@ C:\Users\Emilia\Source\Repos\Fiorello_FronToBack\Fiorello_FronToBack\WebUI\obj\D
 C:\Users\Emilia\Source\Repos\Fiorello_FronToBack\Fiorello_FronToBack\WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Footer\Default.cshtml.g.cs
 C:\Users\Emilia\Source\Repos\Fiorello_FronToBack\Fiorello_FronToBack\WebUI\obj\Debug\netcoreapp3.1\WebUI.csproj.AssemblyReference.cache
 C:\Users\Emilia\Source\Repos\Fiorello_FronToBack\Fiorello_FronToBack\WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Products\Default.cshtml.g.cs
+C:\Users\Emilia\Source\Repos\Fiorello_FronToBack\Fiorello_FronToBack\WebUI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\Emilia\Source\Repos\Fiorello_FronToBack\Fiorello_FronToBack\WebUI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\Emilia\Source\Repos\Fiorello_FronToBack\Fiorello_FronToBack\WebUI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\Emilia\Source\Repos\Fiorello_FronToBack\Fiorello_FronToBack\WebUI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+C:\Users\Emilia\Source\Repos\Fiorello_FronToBack\Fiorello_FronToBack\WebUI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\Emilia\Source\Repos\Fiorello_FronToBack\Fiorello_FronToBack\WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
+C:\Users\Emilia\Source\Repos\Fiorello_FronToBack\Fiorello_FronToBack\WebUI\bin\Debug\netcoreapp3.1\Lucene.Net.dll
+C:\Users\Emilia\Source\Repos\Fiorello_FronToBack\Fiorello_FronToBack\WebUI\bin\Debug\netcoreapp3.1\ICSharpCode.SharpZipLib.dll
+C:\Users\Emilia\Source\Repos\Fiorello_FronToBack\Fiorello_FronToBack\WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationPartial.cshtml.g.cs
